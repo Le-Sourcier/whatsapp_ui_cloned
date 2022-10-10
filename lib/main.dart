@@ -1,15 +1,21 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:whatsapp_clone/Screen/CameraScreen.dart';
 import 'package:whatsapp_clone/Screen/HomeScreen.dart';
 import 'package:whatsapp_clone/Screen/static/color.dart';
 
-void main() async {
+Future<void> main() async {
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   WidgetsFlutterBinding.ensureInitialized();
-
-  cameras = await availableCameras();
+  try {
+    cameras = await availableCameras();
+  } on CameraException catch (e) {
+    print('Error: $e.code\nError Message: $e.message');
+  }
 
   runApp(const MyApp());
 }

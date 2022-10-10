@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LetTalk'),
+        title: const Text('WhatClone'),
         actions: [
           const InkWell(
             child: Icon(Icons.search),
@@ -42,8 +42,8 @@ class _HomeScreenState extends State<HomeScreen>
                 child: Text('New broadcast'),
               ),
               PopupMenuItem(
-                value: 'LetsTalk web',
-                child: Text('LetsTalk web'),
+                value: 'WhatClone web',
+                child: Text('WhatClone web'),
               ),
               PopupMenuItem(
                 value: 'Start message',
@@ -73,8 +73,8 @@ class _HomeScreenState extends State<HomeScreen>
           CameraScreen(),
           // CameraPage(),
           ChatPage(),
-          Text('Status'),
-          Text('Calls')
+          Center(child: Text('Status')),
+          Center(child: Text('Calls'))
         ],
       ),
     );

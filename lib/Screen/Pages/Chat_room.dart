@@ -18,7 +18,6 @@ class _ChatRoomState extends State<ChatRoom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: AppBar(
@@ -78,8 +77,8 @@ class _ChatRoomState extends State<ChatRoom> {
                   child: Text('Media, link and doc'),
                 ),
                 PopupMenuItem(
-                  value: 'LetsTalk web',
-                  child: Text('LetsTalk web'),
+                  value: 'WhatClone web',
+                  child: Text('WhatClone web'),
                 ),
                 PopupMenuItem(
                   value: 'Search',
@@ -98,7 +97,12 @@ class _ChatRoomState extends State<ChatRoom> {
           ],
         ),
       ),
-      body: SizedBox(
+      body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage("assets/images/bg.jpg"),
+          fit: BoxFit.cover,
+        )),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Stack(children: [
