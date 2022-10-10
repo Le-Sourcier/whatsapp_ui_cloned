@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/Screen/Pages/page.dart';
 
 List<CameraDescription> cameras = [];
+// List<CameraDescription> cameras = [];
 
 class CameraScreen extends StatefulWidget {
   const CameraScreen({Key? key}) : super(key: key);
